@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp - HOUMANI Construction Equipment</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <!--Favicon-->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/Favicon-removebg-preview.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/Favicon-removebg-preview.png">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Space+Mono&display=swap');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            margin: 0px;
+
+        }
+
+        .section-color {
+            background-color: #fff;
+            padding: 70px;
+            border-radius: 30px;
+        }
+
+        .section-color .color {
+            color: #ffcc01;
+            border-color: #ffcc01;
+            font-size: 20px;
+        }
+
+        .section-color .color:hover {
+            background-color: #ffcc01;
+            color: #fff;
+            border-color: #ffcc01;
+        }
+
+        .section-color .color1 {
+            color: #ffcc01;
+            border-color: #ffcc01;
+            font-size: 20px;
+            margin-top: 15px;
+        }
+
+        .section-color .color1:hover {
+            background-color: #ffcc01;
+            color: #fff;
+            border-color: #ffcc01;
+        }
+
+        .form-control {
+            color: black;
+            border-color: #ccc;
+            /* Default border color */
+            outline: none;
+            /* Remove the default focus outline */
+            padding: 20px;
+        }
+
+        .form-control:focus {
+            border-color: #ffcc01;
+            /* New focus border color */
+            box-shadow: 0 0 5px #ffcc01;
+            /* Add a custom focus shadow */
+        }
+
+        .background {
+            border: 2px solid #ffcc01;
+            background-color: #ffcc01;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        .background:hover {
+            background-color: #fff;
+            color: #ffcc01;
+            border: 2px solid #ffcc01;
+            border-color: #ffcc01;
+        }
+
+        .contact-button {
+            position: fixed;
+            top: 20%;
+            /* Adjust as needed */
+            right: 0px;
+            /* Adjust as needed */
+            transform: translateY(-50%) rotate(180deg);
+            background-color: #ffcc01;
+            padding: 20px 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            /* Ensure the button is above other content */
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 9000;
+
+        }
+
+        .contact-button a {
+            text-decoration: none;
+            color: #fff;
+            writing-mode: vertical-lr;
+        }
+
+        .contact-button2 {
+            position: fixed;
+            top: 50%;
+            /* Adjust as needed */
+            right: 0px;
+            /* Adjust as needed */
+            transform: translateY(-50%) rotate(180deg);
+            background-color: #ffcc01;
+            padding: 20px 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            /* Ensure the button is above other content */
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 9000;
+
+        }
+
+        .contact-button2 a {
+            text-decoration: none;
+            color: #fff;
+            writing-mode: vertical-lr;
+        }
+
+        .contact-button3 {
+            position: fixed;
+            top: 80%;
+            /* Adjust as needed */
+            right: 0px;
+            /* Adjust as needed */
+            transform: translateY(-50%) rotate(180deg);
+            background-color: #ffcc01;
+            padding: 20px 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            /* Ensure the button is above other content */
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 9000;
+
+        }
+
+        .contact-button3 a {
+            text-decoration: none;
+            color: #fff;
+            writing-mode: vertical-lr;
+        }
+
+        .section-color .full1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-color .full1 h5 {
+            width: 400px;
+        }
+
+        .section-color h3 {
+            text-align: center;
+            position: relative;
+            bottom: 20px;
+        }
+
+        /* Add a new CSS rule for the video container */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* Place the video behind other content */
+            overflow: hidden;
+        }
+
+        /* Style the video element */
+        video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contact-button">
+        <a href="index.html">Home</a>
+    </div>
+    <div class="contact-button2">
+        <a href="shop.html">Shop</a>
+    </div>
+    <div class="contact-button3">
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="video-container">
+        <video autoplay muted playsinline>
+            <source src="images/background/background2.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="mb-5 section-color" action="SignUp.php" method="POST">
+        <h3 class="mb-3">Create Account</h3>
+        <div class="full1">
+            <h5 class="mb-3">First Name:</h5>
+            <input type="text" placeholder="Fullname" id="nameInp" class="form-control mb-3">
+        </div>
+        <div class="full1">
+            <h5 class="mb-3">Last Name:</h5>
+            <input type="text" placeholder="LastName" id="nameInp" class="form-control mb-3">
+        </div>
+        <div class="full1">
+            <h5 class="mb-3">E-Mail:</h5>
+            <input type="text" placeholder="E-Mail" id="emailInp" class="form-control mb-3">
+        </div>
+        <div class="full1">
+            <h5 class="mb-3">Username :</h5>
+            <input type="text" placeholder="Username" id="userInp" class="form-control mb-3">
+        </div>
+        <div class="full1">
+            <h5 class="mb-3">Password:</h5>
+            <input type="password" placeholder="Password" id="passInp" class="form-control mb-3">
+        </div>
+        <div class="full1">
+            <h5 class="mb-3">Confirm Password:</h5>
+            <input type="password" placeholder="Confirm Password" id="conInp" class="form-control mb-3" required>
+        </div>
+        <div class="full1">
+            <h5 class="mb-3">Phone number:</h5>
+            <input type="text" placeholder="Phone number" id="PhoneInp" class="form-control mb-3" required>
+        </div>
+        <div class="full1">
+            <h5 class="mb-3">Company name:</h5>
+            <input type="text" placeholder="Company Name" id="ComInp" class="form-control mb-3" required>
+        </div>
+        <div class="full1">
+            <h5 class="mb-3">Company Website:</h5>
+            <input type="text" placeholder="Company Website" id="webInp" class="form-control mb-3" required>
+        </div>
+        <button type="text" id="sub_btn" class="btn w-100  color mb-3">Register</button>
+        <a href="login1.html" class="badge background py-1 w-100">Already have an Account ?</a>
+        <a href="shop.html"><button type="submit" id="sub_btn" class="btn w-100 color1 mb-3">Cancel</button></a>
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA_P8hMakmziGocKgv5ee5fdG7lfC-fzGU",
+            authDomain: "firev9jsdb-61719.firebaseapp.com",
+            databaseURL: "https://firev9jsdb-61719-default-rtdb.firebaseio.com",
+            projectId: "firev9jsdb-61719",
+            storageBucket: "firev9jsdb-61719.appspot.com",
+            messagingSenderId: "310001513650",
+            appId: "1:310001513650:web:f4a40893516143e34b85ab"
+        };
+
+        const app = initializeApp(firebaseConfig);
+
+        import { getDatabase, ref, set, child, get }
+            from "https:www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
+
+        const db = getDatabase();
+
+        //------------------------------THE REFERENCES------------------------//
+        const name = document.getElementById('nameInp');
+        const email = document.getElementById('emailInp');
+        const username = document.getElementById('userInp');
+        const pass = document.getElementById('passInp');
+        const submit = document.getElementById('sub_btn');
+
+        //------------------------------VALIDATION----------------------//
+
+        function isEmptyOrSpaces(str) {
+            return str === null || str.match(/^ *$/) !== null;
+        }
+        function Validation() {
+            let nameregex = /^[a-zA-Z]+$/;
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            let userregex = /^[a-zA-Z0-9]{5,}$/;
+
+            if (isEmptyOrSpaces(name.value) || isEmptyOrSpaces(email.value) || isEmptyOrSpaces(username.value) || isEmptyOrSpaces(pass.value)) {
+                alert("you cannot left any field empty");
+                return false;
+
+            }
+
+
+            if (!nameregex.test(name.value)) {
+                alert("the name should only contain alphabets !");
+                return false;
+            }
+
+            if (!emailRegex.test(email.value)) {
+                alert("Enter a valid Email!");
+                return false;
+            }
+            if (!userregex.test(username.value)) {
+                alert("username can only be alphanymeric\n-username must be aleast 5 characters\n-username cannot contain spaces");
+                return false;
+            }
+
+            return true;
+
+        }
+
+
+        //---------------------------REGISTER USE TO FIREBASE --------------------------//
+
+        function RegisterUser() {
+            if (!Validation()) {
+                return;
+            }
+
+            if (pass.value !== conInp.value) {
+                alert("Passwords do not match! Please make sure your passwords match.");
+                return;
+            }
+
+            const dbRef = ref(db);
+
+            // Check if the email is already in use
+            get(child(dbRef, "UsersList")).then((snapshot) => {
+                if (snapshot.exists()) {
+                    const usersList = snapshot.val();
+                    for (const userKey in usersList) {
+                        if (usersList[userKey].email === email.value) {
+                            alert("This email is already used by another account!");
+                            return;
+                        }
+                    }
+                }
+
+                // If email is not used and passwords match, proceed with user registration
+                set(ref(db, "UsersList/" + username.value), {
+                    fullname: name.value,
+                    email: email.value,
+                    username: username.value,
+                    password: encPass()
+                })
+                    .then(() => {
+                        alert("User added successfully");
+                        // Redirect to the home page after successful registration
+                        window.location.href = "login1.html";
+                    })
+                    .catch((error) => {
+                        alert("Error: " + error);
+                    });
+            });
+        }
+
+
+
+
+        //------------------------ENCRIPTION-----------------------------------------------//
+        function encPass() {
+            var pass12 = CryptoJS.AES.encrypt(pass.value, pass.value);
+            return pass12.toString();
+        }
+
+        //------------------------ASSIGN THE EVENTS-----------------------------------------//
+
+        submit.addEventListener('click', RegisterUser);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - HOUMANI Construction Equipment</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--Favicon-->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/Favicon-removebg-preview.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/Favicon-removebg-preview.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            margin: 0px;
+
+        }
+
+        .section-color {
+            background-color: #fff;
+            padding: 70px;
+            border-radius: 30px;
+        }
+
+        .section-color .color {
+            color: #ffcc01;
+            border-color: #ffcc01;
+            font-size: 20px;
+        }
+
+        .section-color .color:hover {
+            background-color: #ffcc01;
+            color: #fff;
+            border-color: #ffcc01;
+        }
+
+
+        .section-color .color1 {
+            color: #ffcc01;
+            border-color: #ffcc01;
+            font-size: 20px;
+            margin-top: 15px;
+        }
+
+        .section-color .color1:hover {
+            background-color: #ffcc01;
+            color: #fff;
+            border-color: #ffcc01;
+        }
+
+        .form-control {
+            color: black;
+            border-color: #ccc;
+            /* Default border color */
+            outline: none;
+            /* Remove the default focus outline */
+        }
+
+        .form-control:focus {
+            border-color: #ffcc01;
+            /* New focus border color */
+            box-shadow: 0 0 5px #ffcc01;
+            /* Add a custom focus shadow */
+        }
+
+        .background {
+            border: 2px solid #ffcc01;
+            background-color: #ffcc01;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        .background:hover {
+            background-color: #fff;
+            color: #ffcc01;
+            border: 2px solid #ffcc01;
+            border-color: #ffcc01;
+        }
+
+        .contact-button {
+            position: fixed;
+            top: 20%;
+            /* Adjust as needed */
+            right: 0px;
+            /* Adjust as needed */
+            transform: translateY(-50%) rotate(180deg);
+            background-color: #ffcc01;
+            padding: 20px 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            /* Ensure the button is above other content */
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 9000;
+
+        }
+
+        .contact-button a {
+            text-decoration: none;
+            color: #fff;
+            writing-mode: vertical-lr;
+        }
+
+        .contact-button2 {
+            position: fixed;
+            top: 50%;
+            /* Adjust as needed */
+            right: 0px;
+            /* Adjust as needed */
+            transform: translateY(-50%) rotate(180deg);
+            background-color: #ffcc01;
+            padding: 20px 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            /* Ensure the button is above other content */
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 9000;
+
+        }
+
+        .contact-button2 a {
+            text-decoration: none;
+            color: #fff;
+            writing-mode: vertical-lr;
+        }
+
+        .contact-button3 {
+            position: fixed;
+            top: 80%;
+            /* Adjust as needed */
+            right: 0px;
+            /* Adjust as needed */
+            transform: translateY(-50%) rotate(180deg);
+            background-color: #ffcc01;
+            padding: 20px 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            /* Ensure the button is above other content */
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 9000;
+
+        }
+
+        .contact-button3 a {
+            text-decoration: none;
+            color: #fff;
+            writing-mode: vertical-lr;
+        }
+
+        .section-color .full1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-color .full1 h5 {
+            width: 300px;
+        }
+
+        .section-color h3 {
+            text-align: center;
+            position: relative;
+            bottom: 20px;
+        }
+
+        /* Add a new CSS rule for the video container */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* Place the video behind other content */
+            overflow: hidden;
+        }
+
+        /* Style the video element */
+        video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contact-button">
+        <a href="index.html">Home</a>
+    </div>
+    <div class="contact-button2">
+        <a href="shop.html">Shop</a>
+    </div>
+    <div class="contact-button3">
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="video-container">
+        <video autoplay muted playsinline>
+            <source src="images/background/background2.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="mb-5 section-color">
+        <h3 class="mb-3">LogIn</h3>
+        <div class="full1">
+            <h5 class="mb-3">Username:</h5>
+            <input type="text" placeholder="Username" id="userInp" class="form-control mb-3">
+        </div>
+        <div class="full1">
+            <h5 class="mb-3">Password:</h5>
+            <input type="password" placeholder="Password" id="passInp" class="form-control mb-3">
+        </div>
+        <button type="submit" id="sub_btn" class="btn w-100 color mb-3">LogIn</button>
+        <a href="register8.html" class="badge background py-1 w-100">Want to create an Account?</a>
+        <a href="UsedParts.html"><button type="submit" id="sub_btn" class="btn w-100 color1 mb-3">Cancel</button></a>
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA_P8hMakmziGocKgv5ee5fdG7lfC-fzGU",
+            authDomain: "firev9jsdb-61719.firebaseapp.com",
+            databaseURL: "https://firev9jsdb-61719-default-rtdb.firebaseio.com",
+            projectId: "firev9jsdb-61719",
+            storageBucket: "firev9jsdb-61719.appspot.com",
+            messagingSenderId: "310001513650",
+            appId: "1:310001513650:web:f4a40893516143e34b85ab"
+        };
+
+        const app = initializeApp(firebaseConfig);
+
+        import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
+
+        const db = getDatabase();
+
+        //------------------------------THE REFERENCES------------------------//
+        const username = document.getElementById('userInp');
+        const pass = document.getElementById('passInp');
+        const submit = document.getElementById('sub_btn');
+
+        //------------------------------AUTHENTICATION PROCESS------------------------//
+
+        function AuthenticateUser() {
+            const dbRef = ref(db, "UsersList/" + username.value);
+
+            get(dbRef).then((snapshot) => {
+                if (snapshot.exists()) {
+                    let dbpass = decPass(snapshot.val().password);
+                    if (dbpass === pass.value) {
+                        login(snapshot.val());
+                    } else {
+                        alert("Invalid username or password");
+                    }
+                } else {
+                    alert("Invalid username or password");
+                }
+            });
+        }
+
+        //-----------------------------DESCRIPTION---------------------------------//
+        function decPass(dbpass) {
+            var pass12 = CryptoJS.AES.decrypt(dbpass, pass.value);
+            return pass12.toString(CryptoJS.enc.Utf8);
+        }
+
+        //-----------------------------LOGIN---------------------------------//
+        function login(user) {
+            sessionStorage.setItem('user', JSON.stringify(user));
+            window.location.href = "UsedParts LOGIN.html";
+        }
+
+        //------------------------ASSIGN THE EVENTS-----------------------------------------//
+        submit.addEventListener('click', AuthenticateUser);
+    </script>
+</body>
+
+</html>
